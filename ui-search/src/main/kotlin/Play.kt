@@ -1,12 +1,18 @@
 data class Money(val value: Int)
 
-fun main(args: Array<String>) {
-    val money = Money(value = 100)
-    println("I have money " + money.value)
-    println("I have money " + money)
-    println("I have money $money")
-    println("I have money ${money.value}")
+fun currencyPair(): Pair<Money, Money> {
+    return Pair(Money(1), Money(100))
+}
 
-    val copyMoney = money.copy()
-    println("I have copy money $copyMoney")
+fun main(args: Array<String>) {
+    val currencyPair = currencyPair()
+    println(currencyPair)
+    println("${currencyPair.first} / ${currencyPair.second}")
+
+    val (firstCurrency, secondCurrency) = currencyPair()
+    println("$firstCurrency / $secondCurrency")
+
+    val (_, onlySecondCurrency) = currencyPair()
+    println("$onlySecondCurrency")
+
 }
