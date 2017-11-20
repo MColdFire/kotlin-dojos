@@ -6,4 +6,7 @@ fun main(args: Array<String>) {
     println("I have money " + money)
     println("I have money $money")
     println("I have money ${money.value}")
+
+    val copyMoney = money.copy()
+    println("I have copy money $copyMoney")
 }
